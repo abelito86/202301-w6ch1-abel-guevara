@@ -40,4 +40,5 @@ export const randomSlice = createSlice({
 });
 
 export const seletcRandom = (state: RootState) => state.random.value;
+export const selectRandomStatus = (state: RootState) => state.random.status;
 export default randomSlice.reducer;
