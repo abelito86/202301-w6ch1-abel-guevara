@@ -1,3 +1,4 @@
+ feature/initializer-random
 import React from "react";
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
@@ -6,6 +7,14 @@ import App from "./App";
 
 test("renders learn react link", () => {
   const { getByText } = render(
+import { render } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { store } from './app/store';
+import App from './App';
+
+test('renders learn react link', () => {
+  render(
+  main
     <Provider store={store}>
       <App />
     </Provider>
