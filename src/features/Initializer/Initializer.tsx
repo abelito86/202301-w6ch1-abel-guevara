@@ -1,10 +1,11 @@
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import {
   randomAsync,
   selectRandomStatus,
   seletcRandom,
-} from "./initializer.Slice";
-import "./Initializer.css";
+} from './initializer.Slice';
+import './Initializer.css';
+import React from 'react';
 
 const Random = () => {
   const randomNum = useAppSelector(seletcRandom);
@@ -13,12 +14,13 @@ const Random = () => {
 
   return (
     <div>
-      <p>{randomNum}</p>
+      <p role="paragraph">{randomNum}</p>
       <button
+        data-testid="async-button"
         onClick={() => dispatch(randomAsync())}
-        disabled={loadingNum !== "idle"}
+        disabled={loadingNum !== 'idle'}
       >
-        {loadingNum !== "idle" ? (
+        {loadingNum !== 'idle' ? (
           <span className="lds-dual-ring"></span>
         ) : (
           <span>Init From API</span>
